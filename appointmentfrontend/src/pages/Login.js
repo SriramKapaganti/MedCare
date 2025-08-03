@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const res = await axios.post('https://med-care-srirams-projects-4f261a65.vercel.app/login', {}, form)
+      const res = await axios.post('https://med-care-srirams-projects-4f261a65.vercel.app/login', form ,{withCredentials:true})
 
 
       Cookies.set('user_name', res.data.name)
