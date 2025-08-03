@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const res = await axios.post('https://med-care-gilt.vercel.app/login', form ,{withCredentials:true})
+      const res = await axios.post('https://medcare-1525.onrender.com/login', form ,{withCredentials:true})
 
 
       Cookies.set('user_name', res.data.name)
@@ -30,7 +30,7 @@ const Login = () => {
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      await axios.get("https://med-care-gilt.vercel.app/verify-token", {
+      await axios.get("https://medcare-1525.onrender.com/verify-token", {
         withCredentials: true,
       })
       

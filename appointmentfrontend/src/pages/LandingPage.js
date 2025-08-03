@@ -11,7 +11,7 @@ const LandingPage = () => {
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      await axios.get("https://med-care-gilt.vercel.app/verify-token", {
+      await axios.get("https://medcare-1525.onrender.com/verify-token", {
         withCredentials: true,
       })
     } catch (err) {
@@ -21,16 +21,19 @@ const LandingPage = () => {
 
   checkAuth()
 
-  axios.get('https://med-care-gilt.vercel.app/doctors', {withCredentials: true})
+  axios.get('https://medcare-1525.onrender.com/doctors', {withCredentials: true})
     .then(res => setDoctors(res.data))
     .catch(err => console.error(err))
 }, [navigate])
 
-  
+  const filteredDoctors = doctors.filter(doc =>
+  (doc.name?.toLowerCase() || '').includes(searchText.toLowerCase()) ||
+  (doc.specialization?.toLowerCase() || '').includes(searchText.toLowerCase())
+)
 
   const logout =async() => {
      try {
-          await axios.post("https://med-care-gilt.vercel.app/logout", {} , {
+          await axios.post("https://medcare-1525.onrender.com/logout", {} , {
             withCredentials: true,
           })
           navigate("/login")
@@ -55,7 +58,7 @@ const LandingPage = () => {
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {doctors.map(doctor => (
+        {filteredDoctors.map(doctor => (
           <div
             key={doctor.id}
             onClick={() => navigate(`/doctor/${doctor.id}`)}
