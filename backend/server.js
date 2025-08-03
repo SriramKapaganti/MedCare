@@ -253,7 +253,6 @@ app.listen(5000, () => console.log('SQLite backend running on http://localhost:5
 app.get('/verify-token', (req, res) => {
   const token = req.cookies.token
   if (!token) return res.status(401).json({ error: 'No token' })
-
   try {
     const decoded = jwt.verify(token, SECRET_KEY)
     res.json({ valid: true, user: decoded })

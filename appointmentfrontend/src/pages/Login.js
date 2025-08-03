@@ -33,7 +33,7 @@ const Login = () => {
       await axios.get("https://medcare-1525.onrender.com/verify-token", {
         withCredentials: true,
       })
-      
+      navigate("/")
     } catch (err) {
     }
   }
