@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: true,
+  origin: "https://med-care-gilt.vercel.app",
   credentials: true
 }))
 
