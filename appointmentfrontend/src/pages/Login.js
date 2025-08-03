@@ -33,7 +33,7 @@ const Login = () => {
       await axios.get("https://med-care-gilt.vercel.app/verify-token", {
         withCredentials: true,
       })
-      navigate("/")
+      
     } catch (err) {
     }
   }
