@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: 'https://med-care-9j7was196-srirams-projects-4f261a65.vercel.app',
+  origin: 'https://med-care-gilt.vercel.app/',
   credentials: true
 }))
 
