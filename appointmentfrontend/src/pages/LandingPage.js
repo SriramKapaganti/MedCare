@@ -21,7 +21,7 @@ const LandingPage = () => {
 
   checkAuth()
 
-  axios.get('https://med-care-gilt.vercel.app/doctors, {withCredentials: true}')
+  axios.get('https://med-care-gilt.vercel.app/doctors', {withCredentials: true})
     .then(res => setDoctors(res.data))
     .catch(err => console.error(err))
 }, [navigate])
