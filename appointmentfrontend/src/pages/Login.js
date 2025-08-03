@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const res = await axios.post('https://medcare-1525.onrender.com/login', form)
+      const res = await axios.post('https://medcare-1525.onrender.com/login', {}, form)
 
 
       Cookies.set('user_name', res.data.name)
