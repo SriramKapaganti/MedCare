@@ -27,9 +27,9 @@ const LandingPage = () => {
 }, [navigate])
 
   const filteredDoctors = doctors.filter(doc =>
-    doc.name.toLowerCase().includes(searchText.toLowerCase()) ||
-    doc.specialization.toLowerCase().includes(searchText.toLowerCase())
-  )
+  (doc.name?.toLowerCase() || '').includes(searchText.toLowerCase()) ||
+  (doc.specialization?.toLowerCase() || '').includes(searchText.toLowerCase())
+)
 
   const logout =async() => {
      try {
