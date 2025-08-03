@@ -26,10 +26,7 @@ const LandingPage = () => {
     .catch(err => console.error(err))
 }, [navigate])
 
-  const filteredDoctors = doctors.filter(doc =>
-  (doc.name?.toLowerCase() || '').includes(searchText.toLowerCase()) ||
-  (doc.specialization?.toLowerCase() || '').includes(searchText.toLowerCase())
-)
+  
 
   const logout =async() => {
      try {
@@ -58,7 +55,7 @@ const LandingPage = () => {
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredDoctors.map(doctor => (
+        {doctors.map(doctor => (
           <div
             key={doctor.id}
             onClick={() => navigate(`/doctor/${doctor.id}`)}
