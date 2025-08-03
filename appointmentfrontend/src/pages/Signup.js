@@ -16,7 +16,7 @@ const Signup = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await axios.post('https://medcare-1525.onrender.com/signup', form)
+      await axios.post('https://med-care-srirams-projects-4f261a65.vercel.app/signup', form)
       navigate('/login')
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed')

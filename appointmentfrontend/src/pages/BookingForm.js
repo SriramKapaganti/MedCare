@@ -28,7 +28,7 @@ const BookingForm = () => {
     const formattedDate = selectedDate.toISOString().split('T')[0]
 
     try {
-      await axios.post('https://medcare-1525.onrender.com/appointments', {
+      await axios.post('https://med-care-srirams-projects-4f261a65.vercel.app/appointments', {
         doctorId: parseInt(doctorId),
         name,
         email,

@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      const res = await axios.post('https://medcare-1525.onrender.com/login', {}, form)
+      const res = await axios.post('https://med-care-srirams-projects-4f261a65.vercel.app/login', {}, form)
 
 
       Cookies.set('user_name', res.data.name)
@@ -30,7 +30,7 @@ const Login = () => {
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      await axios.get("https://medcare-1525.onrender.com/verify-token", {
+      await axios.get("https://med-care-srirams-projects-4f261a65.vercel.app/verify-token", {
         withCredentials: true,
       })
       navigate("/")

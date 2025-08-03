@@ -11,7 +11,7 @@ const LandingPage = () => {
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      await axios.get("https://medcare-1525.onrender.com/verify-token", {
+      await axios.get("https://med-care-srirams-projects-4f261a65.vercel.app/verify-token", {
         withCredentials: true,
       })
     } catch (err) {
@@ -21,7 +21,7 @@ const LandingPage = () => {
 
   checkAuth()
 
-  axios.get('https://medcare-1525.onrender.com/doctors, {withCredentials: true}')
+  axios.get('https://med-care-srirams-projects-4f261a65.vercel.app/doctors, {withCredentials: true}')
     .then(res => setDoctors(res.data))
     .catch(err => console.error(err))
 }, [navigate])
@@ -33,7 +33,7 @@ const LandingPage = () => {
 
   const logout =async() => {
      try {
-          await axios.post("https://medcare-1525.onrender.com/logout", {} , {
+          await axios.post("https://med-care-srirams-projects-4f261a65.vercel.app/logout", {} , {
             withCredentials: true,
           })
           navigate("/login")
