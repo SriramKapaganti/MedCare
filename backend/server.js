@@ -12,21 +12,8 @@ const sqlite3 = require("sqlite3").verbose()
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
-
-const allowedOrigins = [
-  'https://med-care-git-main-srirams-projects-4f261a65.vercel.app',
-  'https://med-care-srirams-projects-4f261a65.vercel.app',
-  'https://med-care-gilt.vercel.app',
-  'http://localhost:3000' ]
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true)
-    } else {
-      callback(new Error('CORS error: Origin not allowed'))
-    }
-  },
+  origin: true,
   credentials: true
 }))
 
