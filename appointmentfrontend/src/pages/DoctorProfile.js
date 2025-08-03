@@ -8,13 +8,13 @@ const DoctorProfile = () => {
   const [doctor, setDoctor] = useState(null)
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/doctors/${id}`)
+    axios.get(`https://medcare-1525.onrender.com/doctors/${id}`)
       .then(res => {setDoctor(res.data) 
         console.log(res.data)
       })
       .catch(err => {
         console.error(err)
-        navigate('/') // redirect if doctor not found
+        navigate('/') 
       })
   }, [id, navigate])
 

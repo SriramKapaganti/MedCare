@@ -11,7 +11,7 @@ const LandingPage = () => {
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      await axios.get("http://localhost:5000/verify-token", {
+      await axios.get("https://medcare-1525.onrender.com/verify-token", {
         withCredentials: true,
       })
     } catch (err) {
@@ -21,7 +21,7 @@ const LandingPage = () => {
 
   checkAuth()
 
-  axios.get('http://localhost:5000/doctors')
+  axios.get('https://medcare-1525.onrender.com/doctors')
     .then(res => setDoctors(res.data))
     .catch(err => console.error(err))
 }, [navigate])
@@ -33,7 +33,7 @@ const LandingPage = () => {
 
   const logout =async() => {
      try {
-          await axios.post("http://localhost:5000/logout", {} , {
+          await axios.post("https://medcare-1525.onrender.com/logout", {} , {
             withCredentials: true,
           })
           navigate("/login")

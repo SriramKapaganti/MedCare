@@ -28,7 +28,7 @@ const BookingForm = () => {
     const formattedDate = selectedDate.toISOString().split('T')[0]
 
     try {
-      await axios.post('http://localhost:5000/appointments', {
+      await axios.post('https://medcare-1525.onrender.com/appointments', {
         doctorId: parseInt(doctorId),
         name,
         email,

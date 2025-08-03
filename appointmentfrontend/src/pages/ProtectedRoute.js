@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        await axios.get('http://localhost:5000/verify-token', {
+        await axios.get('https://medcare-1525.onrender.com/verify-token', {
           withCredentials: true,
         })
         setIsAuthenticated(true)
