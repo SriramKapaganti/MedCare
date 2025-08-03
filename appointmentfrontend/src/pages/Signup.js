@@ -16,7 +16,7 @@ const Signup = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await axios.post('https://medcare-1525.onrender.com/signup', form)
+      await axios.post('https://medcare-1525.onrender.com/signup', form, {withCredentials: true})
       navigate('/login')
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed')
@@ -57,7 +57,7 @@ const Signup = () => {
       </div>
 
       <div>
-        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign in</button>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign up</button>
       </div>
       
       <div>

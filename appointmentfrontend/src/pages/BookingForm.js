@@ -34,7 +34,7 @@ const BookingForm = () => {
         email,
         date: formattedDate,
         time,
-      })
+      },{withCredentials: true})
       setShowSuccessModal(true)
       setTimeout(() => navigate('/'), 1500)
     } catch (error) {

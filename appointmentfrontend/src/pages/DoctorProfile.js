@@ -8,7 +8,7 @@ const DoctorProfile = () => {
   const [doctor, setDoctor] = useState(null)
 
   useEffect(() => {
-    axios.get(`https://medcare-1525.onrender.com/doctors/${id}`)
+    axios.get(`https://medcare-1525.onrender.com/doctors/${id}`, {withCredentials: true})
       .then(res => {setDoctor(res.data) 
         console.log(res.data)
       })

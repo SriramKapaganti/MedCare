@@ -21,7 +21,7 @@ const LandingPage = () => {
 
   checkAuth()
 
-  axios.get('https://medcare-1525.onrender.com/doctors')
+  axios.get('https://medcare-1525.onrender.com/doctors, {withCredentials: true}')
     .then(res => setDoctors(res.data))
     .catch(err => console.error(err))
 }, [navigate])
