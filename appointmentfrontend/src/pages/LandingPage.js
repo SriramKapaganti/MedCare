@@ -45,7 +45,7 @@ const LandingPage = () => {
     <div className="p-6 max-w-6xl mx-auto">
       <div className='flex flex-row justify-between items-center w-1104 h-84 mb-6'>
         <h1 className="text-3xl font-bold  text-center font-[Roboto] italic self-center">Med Care</h1>
-        <TbLogout2 className='text-black text-3xl item-center ' onClick={() => logout()} />
+        <TbLogout2 className='text-black text-3xl item-center ' onClick={logout} />
       </div>
       <p className='text-xl font-bold-600 mb-6 font-[Roboto] italic'>At MedCare, we believe that access to quality healthcare should be simple, seamless, and stress-free. Whether you're looking to book an appointment with top specialists, consult online, or track your medical history — MedCare brings everything together in one place. 
          With experienced doctors, real-time booking, and personalized care, we make your health our priority.</p>

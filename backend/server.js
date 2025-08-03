@@ -222,9 +222,9 @@ app.post("/login", (req, res) => {
 
       res.cookie('token', token, {
         httpOnly: true,
-        sameSite: 'Lax',
-        secure: false, 
-        path: "/",
+        sameSite: 'None',  
+        secure: true,      
+        path: '/',
         maxAge: 3600000
       })
 
@@ -239,11 +239,11 @@ app.post("/login", (req, res) => {
 //Logout
 app.post('/logout', (req, res) => {
   res.clearCookie('token', {
-    httpOnly: true,
-    sameSite: 'Lax',
-    secure: false,
-    path: '/', 
-  })
+  httpOnly: true,
+  sameSite: 'None',
+  secure: true,
+  path: '/'
+})
   res.json({ message: 'Logged out' })
 })
 
